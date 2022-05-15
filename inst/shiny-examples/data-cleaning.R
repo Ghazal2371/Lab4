@@ -16,7 +16,6 @@ ui <- fluidPage(
   # Show a numeric
   mainPanel(
     plotOutput("cc$date"),
-    plotOutput("cc$stor_long_location")
   )
 )
 # Define server logic required to show
@@ -50,7 +49,6 @@ server <- function(input, output) {
     w = which(!is.na(cc$na))
     cc <- cc[-c(w), ]
     return(plot(cc$date))
-    return(plot(cc$stor_long_location))
   })
 }
 # Bind ui and server together
