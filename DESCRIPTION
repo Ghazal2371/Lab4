@@ -1,9 +1,15 @@
+Type: Package
 Package: Lab4
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: Ghazal shahabadi
-Description: What the package does (one paragraph).
+Title: data visualization of liquor purchase in Iowa
+Version: 0.1.0.9000
+Author: Ghazal Shahabadi
+Maintainer: The package maintainer <ghazals@iastate.edu>
+Description: Using shiny app to visualize some data.
 License: MIT + file LICENSE
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    shiny
+    
