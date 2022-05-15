@@ -3,6 +3,7 @@ library(tidyverse)
 library(lubridate)
 library(dplyr)
 library(shiny)
+library(plotly)
 # Define UI for application
 ui <- fluidPage(
   # Application title
@@ -15,12 +16,12 @@ ui <- fluidPage(
 
   # Show a numeric
   mainPanel(
-    plotOutput("cc$date"),
+    plotOutput("cc.location"),
   )
 )
 # Define server logic required to show
 server <- function(input, output) {
-  output$cc$date <- renderPlot({
+  output$cc.location <- renderPlot({
     html = GET(input$link)
     a = content(html)
     b = unlist(unlist(a))
@@ -48,7 +49,7 @@ server <- function(input, output) {
     dd = na.omit(cc)
     w = which(!is.na(cc$na))
     cc <- cc[-c(w), ]
-    return(plot(cc$date))
+    plotly(cc$stor_long_location, cc$stor_lati_location)
   })
 }
 # Bind ui and server together
